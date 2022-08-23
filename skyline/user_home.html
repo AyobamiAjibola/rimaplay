@@ -1,0 +1,3069 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--- Additional CSS Files --->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<!---- Additional JavaScript Files --->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+</head>
+<style type="text/css">	
+	body{
+		background: #272727;
+	}
+	nav{
+		z-index: 99;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 70px;
+	}
+    nav.sticky{
+    	background-color: transparent;
+    }
+	.menu_area{
+		padding: 2rem;
+		display: flex;
+		width: 100%;
+	}
+    .menu_text i{
+        margin-left: 1050px;
+        color: #fefefe;
+    }
+	.logo a{
+		font-size: 25px;
+		text-transform: uppercase;
+		text-decoration: none;
+		margin-left: 20px;
+		color: #fefefe;
+	}
+	.menu_area .menu_dots{
+		width: 30px;
+		height: 30px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		display: grid;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		z-index: 11;
+	}
+	.menu_area .dot{
+		font-size: 20px;
+		 margin-left: 20px;
+	}
+	.cas{
+		display: none;
+	}
+	.modal{
+		z-index: 8;
+		position: fixed;
+		top: 0;
+		left: 1010px;
+		width: 30%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transform: translateX(100%);
+		transition: all 0.8s ease-in;
+	}
+	.modal:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+    	background: #020202;
+    	opacity: 0.4;
+    	z-index: -1;
+	}
+	.modal ul {
+		list-style: none;
+		display: block;
+	}
+	.modal li{ 
+		margin: 1rem 0;
+	}
+	.modal a{
+		font-size: 25px;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.modal a:hover{
+		text-decoration: underline;
+		text-underline-position: under;
+		text-decoration-color: #4f51b8;
+	}
+	/**Classes for JavaScript**/
+	.modal.open{
+		transform: translateX(0);
+	}
+	.menu_dots.open .op{
+		display: none;
+	}
+	.menu_dots.open .cas{
+		transform: rotate(90deg);
+		display: block;
+		color: #fff;
+	}
+	.menu_dots.open .dot:nth-child(even){
+		background: transparent;
+	}
+	/**HOME**/
+	.home{
+		background: url('images/13.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 140vh;
+		object-fit: contain;
+		object-position: center;
+	}
+	.hom_i{
+		font-size: 25px;
+		color: #feb52c;
+	}
+	.ps{
+		margin-top: 70px;
+		font-size: 20px
+	}
+	.hom_li{
+		margin-left: 240px;
+		height: 50px;
+		width: 50px;
+		border: 2px solid #fff;
+		border-radius: 5px;
+	}
+	.li_p{
+		padding: 7px;
+		text-align: center;
+	}
+	.home h1{
+		font-size: 100px;
+		text-transform: uppercase;
+		margin-left: 20px;
+	}
+	.hom_ps{
+		font-size: 30px;
+	}
+	.btn_cul{
+		outline: none;
+		padding: 10px 40px;
+		background: #2049b1;
+		opacity: .7;
+	}
+	.btn_cul a{
+		font-size: 20px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: capitalize;
+		color: #fff;
+	}
+	.btn_off{
+		position: relative;
+		right: 350px;
+		outline: none;
+		padding: 10px 40px;
+		background: transparent;
+		border: 2px solid #2049b1;
+	}
+	.btn_off a{
+		font-size: 20px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: capitalize;
+		color: #fff;
+	}
+	.homz{
+		display: flex;
+		padding: 20px 70px;
+		margin-top: 40px;
+	}
+    .hom{
+    	flex: 1;
+        margin: 0 5px;
+    }
+	.hom a{
+		text-decoration: none;
+		color: #c0bfbf;
+	}
+	.hom img{
+		height: 30vh;
+		object-fit: cover;
+		object-position: center;
+		border-radius: 5px;
+	}
+	.homz button{
+    	margin-bottom: 60px;
+    	background: transparent;
+    	border: none;
+    	outline: none;
+	}
+    .homz button i{
+    	font-size: 120px;
+    	color: #5c5451;
+    }
+    .homz button.left{
+    	position: relative;
+    	right: 70px;
+    }
+    .homz button.right{
+    	position: relative;
+    	left: 1170px;
+    }
+    .homz .owl-nav{
+        position: absolute;
+        bottom: 10px;
+
+    }
+    .bak_d:before{
+    	content: "";
+    	position: absolute;
+    	height: 100%;
+    	width: 100%;
+    	top: 0;
+    	left:0;
+    	background: #675d55;
+    	opacity: 0.4;
+    	z-index: -1;
+    }
+    /**Carousel 1**/
+    .rfy{
+        display: inline-flex;
+    }
+    .ry{
+    	flex: 1;
+        margin: 0 5px;
+    }
+    .rfy .owl-nav{
+        position: absolute;
+        top: -60px;
+        right: 0px;
+        padding-right: 60px;
+    }
+    .rfy button{
+        background: #000;
+        border: none;
+        outline: none;
+    }
+    .rfy button i{
+        font-size: 30px;
+        color: #fff;
+    }
+    .rfy button.left{
+        position: relative;
+        right: 5px;
+    }
+    /**Carousel 2**/
+    .pmy{
+        display: inline-flex;
+    }
+    .pm{
+        flex: 1;
+        margin: 0 5px;
+    }
+    .pmy .owl-nav{
+        position: absolute;
+        top: -60px;
+        right: 0px;
+        padding-right: 60px;
+    }
+    .pmy button{
+        background: #000;
+        border: none;
+        outline: none;
+    }
+    .pmy button i{
+        font-size: 30px;
+        color: #fff;
+    }
+    .pmy button.left{
+        position: relative;
+        right: 5px;
+    }
+    /**Carousel 3**/
+    .tfy{
+        display: inline-flex;
+    }
+    .ty{
+        flex: 1;
+        margin: 0 5px;
+    }
+    .tfy .owl-nav{
+        position: absolute;
+        top: -60px;
+        right: 0px;
+        padding-right: 60px;
+    }
+    .tfy button{
+        background: #000;
+        border: none;
+        outline: none;
+    }
+    .tfy button i{
+        font-size: 30px;
+        color: #fff;
+    }
+    .tfy button.left{
+        position: relative;
+        right: 5px;
+    }
+    /**Carousel 4**/
+    .tsy{
+        display: inline-flex;
+    }
+    .ts{
+        flex: 1;
+        margin: 0 5px;
+    }
+    .tsy .owl-nav{
+        position: absolute;
+        top: -60px;
+        right: 0px;
+        padding-right: 60px;
+    }
+    .tsy button{
+        background: #000;
+        border: none;
+        outline: none;
+    }
+    .tsy button i{
+        font-size: 30px;
+        color: #fff;
+    }
+    .tsy button.left{
+        position: relative;
+        right: 5px;
+    }
+    /**Carousel 5**/
+    .sky{
+        display: inline-flex;
+    }
+    .sk{
+        flex: 1;
+        margin: 0 5px;
+    }
+    .sky .owl-nav{
+        position: absolute;
+        top: -60px;
+        right: 0px;
+        padding-right: 60px;
+    }
+    .sky button{
+        background: #000;
+        border: none;
+        outline: none;
+    }
+    .sky button i{
+        font-size: 30px;
+        color: #fff;
+    }
+    .sky button.left{
+        position: relative;
+        right: 5px;
+    }
+    /**Overlay Text**/
+    .overlay-text button i{
+        font-size: 16px !important;
+    }
+    .single-team{
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        color: #fff;
+    }
+    .single-team a{
+    	text-decoration: none;
+    	color: #fff;
+    }
+    .team-img{
+        position: relative;
+    }
+    .team-img:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        transform: translateX(-100%);
+        transition: all 0.5s ease;
+        visibility: hidden;
+        width: 100%;
+        height: 100%;
+    }
+    .single-team:hover .team-img:before{
+        visibility: visible;
+        transform: translateY(0%);
+    }
+    .team-img img{ 
+        z-index: 10;
+        transition: 0.5s ease-out;
+        border-radius: 5px;
+        object-fit: cover;
+        box-shadow: 0 0 2px 1px rgb(0 0 0 / 20%);
+    }
+    .single-team:hover img{
+        transform: scale(1.2);
+    }
+    .overlay-text{
+        position: absolute;
+        z-index: 15;
+        color: #fff;
+        top: 0%;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.4s ease;
+        padding: 18px;
+        /*background-color: rgba(250,250,250,0.25);*/
+    }
+    .single-team:hover .overlay-text{
+        opacity: 1;
+        visibility: visible;
+    }
+    .overlay-text h3{
+        transition: all 1s ease;
+    }
+    .overlay-text button{
+        outline: none!important;
+        padding: 5px!important;
+        position: relative;
+        left: 20px!important;
+    	background: #2049ad;
+    }
+    .overlay-text:hover h3{
+        top: 0;
+    }
+    .overlay-text p{
+        transition: all 1s ease; 
+    }
+    .overlay-text:hover p{
+        bottom: 0;
+    }
+    .star{
+    	color: #feb52c;
+    	margin-top: 7px;
+    }
+    .jxs{
+    	margin-left: 5px;
+    	margin-top: 5px;
+    }
+    .bx{
+    	margin-left: 5px;
+    	height: 35px;
+    	width: 35px;
+    	border: 2px solid #fff;
+    	border-radius: 5px; 
+    }
+    .bx p{
+    	text-align: center;
+    	padding: 4px 2px;
+    }
+    .buxed{
+    	background: transparent!important;
+    	border: 2px solid #2049ad!important;
+    }
+    @media (max-width: 800px){
+    	.menu_text{
+    		margin-left: 130px;
+    	}  
+    	.modal{
+    		z-index: 8;
+    		position: fixed;
+    		top: 0;
+	        left: 180px;
+	        width: 55%;
+	        transform: translateX(100%);
+	    }
+	    .menu_area .menu_dots{
+	    	margin-left: 0px;
+	    }
+	    /**HOME**/
+	    .home{
+	    	height: 140vh;
+	    }
+	    .hom_i{
+	    	font-size: 18px;
+	    }
+	    .ps{
+	    	font-size: 18px;
+	    }
+	    .hom_li{
+	    	margin-left: 105px;
+	    	height: 35px;
+	    	width: 35px;
+	    }
+	    .li_p{
+	    	padding: 0px;
+	    	padding-top: 3px;
+	    }
+	    .home h1{
+	    	font-size: 80px;
+	    	margin-left: 10px;
+	    }
+	    .hom_ps{
+	    	font-size: 20px;
+	    }
+	    .btn_cul{
+	    	outline: none;
+	    	padding: 5px 20px;
+	    }
+	    .btn_cul a{
+	    	font-size: 18px;
+	    }
+	    .btn_off{
+	    	position: relative;
+	    	right: 0px;
+	    	outline: none;
+	    	padding: 5px 20px;
+	    }
+	    .btn_off a{
+			font-size: 18px;
+		}
+		.homz{
+			padding: 0px 70px;
+		}
+		/**Overlay**/
+		.overlay-text{
+			display: none;
+		}
+
+	}
+	/**For Owl-Carousel Only**/
+    @media (max-width: 1199px){
+    	.owl-nav{
+    		display: none;
+    	}
+    	.ry{
+    		flex: 1;
+    		margin: 0 10px;
+    	}
+    	.pm{
+    		flex: 1;
+    		margin: 0 10px;
+    	}
+    	.ty{
+    		flex: 1;
+    		margin: 0 10px;
+    	}
+    	.ts{
+    		flex: 1;
+    		margin: 0 10px;
+    	}
+	    .sy{
+	        flex: 1;
+	        margin: 0 10px;
+	    }
+	}
+</style>
+<body>
+	<section>
+		<!--==Navigation==-->
+		<nav>
+			<div class="menu_area">
+				<div class="logo">
+					<a href="index.html">skyline</a>
+				</div>
+				<div class="menu_text">
+					<a href="">
+						<i class="fa fa-search" style="font-size: 20px; margin-top: 5px;"></i>
+					</a>
+				</div>
+				<div style="margin-left: 20px;">
+					<a href="">
+						<i class="fa fa-bullhorn" style="font-size: 25px; color: #fefefe;"></i>
+						<p style="background: #2445e4; color: #000; width: 20px; height: 20px; border-radius: 50%; text-align: center; position: relative; left: 10px; bottom: 15px;">2</p>
+					</a>
+				</div>
+				<div class="menu_dots" style="color: #fff;">
+					<div class="dot">
+						<i class="fa fa-bars op"></i>
+						<i class="fa fa-times cas"></i>
+					</div>
+				</div>
+			</div>
+			<div class="modal">
+				<ul>
+					<li><a href="index.html">home</a></li>
+					<li><a href="">movies</a></li>
+					<li><a href="">tvshows</a></li>
+					<li><a href="">new</a></li>
+					<li><a href="">ireport</a></li>
+					<li><a href="">my list</a></li>
+					<li><a href="">setting</a></li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+	<section class="home">
+		<div class="container" style="color: #fff;">
+			<div class="ps">
+				<ul style="list-style: none; display: inline-flex; ">
+					<li><i class="fa fa-star hom_i"></i></li>
+					<li style="margin-left: 20px;"><p>8.6</p></li>
+					<li style="margin-left: 20px;"><p>-</p></li>
+					<li style="margin-left: 20px;"><p>2022</p></li>
+					<li class="hom_li"><p class="li_p">+18</p></li>
+				</ul>
+			</div>
+			<div>
+				<h1>thor</h1>
+			</div>
+			<div>
+				<p class="hom_ps">Lorem ipsum dolor sit amet, consec</p>
+				<p class="hom_ps">love comes first, lorem ipum someti-</p>
+				<p class="hom_ps">mes in maynem love comes first</p>
+			</div>
+			<div>
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<button class="btn btn_cul">
+							<a href="" style=""><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+						</button>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<button class="btn btn_off">
+							<a href="" >+ my list</a>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="" class="">
+            <div class="homz owl-carousel bak_d">
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">comedy</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">romance</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">sci-fi/fantacy</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">action/thriller</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">horror</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">comedy</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">romance</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">sci-fi/fantacy</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">action/thriller</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+                <div class="hom">
+                    <a href="">
+                    	<h3 class="text-center" style="text-transform: uppercase;">horror</h3>
+                        <img src="images/13.jpg" class="img-responsive img-fluid">
+                    </a>
+                </div>
+            </div>
+		</div>
+	</section>
+    <section style="padding-bottom: 30px; margin-top: 40px;">
+        <div>
+            <div class="container-fluid">
+                <div>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">recommended for you</h3>
+                </div>
+                <div class="rfy owl-carousel" style="margin-top: 30px;">
+                    <div class="ry single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/wick.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ry single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/us.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ry single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/salt.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ry single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/spy.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ry single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/john.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ry single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/tree.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ry single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/pic.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom: 20px; margin-top: 0px;">
+        <div>
+            <div class="container-fluid">
+                <div>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">popular movies for you</h3>
+                </div>
+                <div class="pmy owl-carousel" style="margin-top: 30px;">
+                    <div class="pm single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/wick.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="pm single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/us.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="pm single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/salt.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="pm single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/spy.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="pm single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/john.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="pm single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/tree.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="pm single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/pic.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom: 20px; margin-top: 0px;">
+        <div>
+            <div class="container-fluid">
+                <div>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">top 10 trending for you</h3>
+                </div>
+                <div class="tfy owl-carousel" style="margin-top: 30px;">
+                    <div class="ty single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/wick.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ty single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/us.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ty single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/salt.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ty single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/spy.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ty single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/john.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ty single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/tree.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ty single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/pic.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom: 20px; margin-top: 0px;">
+        <div style="color: #000;">
+            <div class="container-fluid">
+                <div>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">popular tv series for you</h3>
+                </div>
+                <div class="tsy owl-carousel" style="margin-top: 30px;">
+                    <div class="ts single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/wick.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ts single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/us.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ts single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/salt.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ts single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/spy.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ts single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/john.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ts single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/tree.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="ts single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/pic.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section>
+    <section style="padding-bottom: 20px; margin-top: 0px;">
+        <div>
+            <div class="container-fluid">
+                <div>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">skyline kiddies for you</h3>
+                </div>
+                <div class="sky owl-carousel" style="margin-top: 30px;">
+                    <div class="sk single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/wick.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="sk single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/us.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="sk single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/salt.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="sk single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/spy.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="sk single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/john.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="sk single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/tree.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                    <div class="sk single-team">
+                    	<div class="">
+                    		<a href="">
+                    			<div class="team-img">
+                    				<img src="images/pic.jpg" class="img-responsive img-fluid">
+                    			</div>
+                    			<div class="overlay-text">
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<ul style="list-style: none; display: inline-flex;">
+                    							<li><i class="fa fa-star star" style=""></i></li>
+                    							<li class="jxs"><p>8.6</p></li>
+                    							<li class="jxs"><p>-</p></li>
+                    							<li class="jxs"><p>2022</p></li>
+                    							<li class="bx"><p>+18</p></li>
+                    						</ul>
+                    					</div>
+                    				</div>
+                    				<div class="row">
+                    					<div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                    						<h3 style="text-transform: capitalize; font-size: 20px; font-weight: bold;">John wick</h3>
+                    					</div>
+                    				</div>
+                    				<div class="text-center" style="font-size: 18px;">
+                    					<p>Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first. Lorem Ipum sometimes in maynem love comes first, Lorem Ipum sometimes in maynem love comes first</p>
+                    				</div>
+                    				<div style="font-weight: bold; font-size: 18px;" class="text-center">
+                    					<p>casts</p>
+                    				</div>
+                    				<div class="text-center" style="font-weight: bold; text-transform: capitalize;">
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>keanu reeves</p>
+                    							<p>douglas res</p>
+                    							<p>roy woods</p>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<p>hilary kim</p>
+                    							<p>pit bratt</p>
+                    							<p>kate fisher</p>
+                    						</div>
+                    					</div>
+                    				</div>
+                    				<div>
+                    					<div class="row">
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn bux">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;"><i class="fa fa-play"></i>&nbsp; &nbsp;watch now</a>
+                    							</button>
+                    						</div>
+                    						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    							<button class="btn buxed">
+                    								<a href="" style="text-align: center; text-decoration: none; text-transform: capitalize;">+ add to list</a>
+                    							</button>
+                    						</div>
+                    					</div>
+                    				</div>
+                    			</div>
+                    		</a>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>            
+    </section>
+	<?php 
+	include('includes/footer.php');
+	?>
+	<script type="text/javascript">
+		// search-box open close js code
+		let navbar = document.querySelector(".navbar");
+        let body = document.querySelector("body");
+        let nav = document.querySelector("nav");
+		const menu = document.querySelector('.menu_dots');
+		const modal = document.querySelector('.modal');
+		const logo = document.querySelector('.logo');
+
+		menu.addEventListener('click', openModal);
+
+		function openModal(){
+			menu.classList.toggle('open')
+			modal.classList.toggle('open')
+			logo.classList.toggle('open')
+		}
+
+        window.onscroll = ()=>{
+            this.scrollY > 20 ? nav.classList.add("sticky") : nav.classList.remove("sticky");
+        }
+        const rightIcon = '<button class="right"><i class="fa fa-angle-right"></i></button>';
+        const leftIcon = '<button class="left"><i class="fa fa-angle-left"></i></button>';
+        $(".homz").owlCarousel({
+            loop: true,
+            nav: true,
+            navText: [
+               leftIcon,
+               rightIcon            
+            ],
+            responsive:{
+                0:{
+                    items:1,
+                    margin: 0
+                },
+                700:{
+                    items:3,
+                    margin: 0
+                },
+                1000:{
+                    items:5,
+                    margin: 2
+                }
+            }
+        });
+        const nextIcon = '<button class="right"><i class="fa fa-angle-right"></i></button>';
+        const prevIcon = '<button class="left"><i class="fa fa-angle-left"></i></button>';
+        $(".rfy").owlCarousel({
+            loop: true,
+            nav: true,
+            navText: [
+               prevIcon,
+               nextIcon            
+            ],
+            responsive:{
+                0:{
+                    items:2,
+                    margin: 0
+                },
+                700:{
+                    items:3,
+                    margin: 0
+                },
+                1000:{
+                    items:4,
+                    margin: 5
+                }
+            }
+        });
+        const forIcon = '<button class="right"><i class="fa fa-angle-right"></i></button>';
+        const bacIcon = '<button class="left"><i class="fa fa-angle-left"></i></button>';
+        $(".pmy").owlCarousel({
+            loop: true,
+            nav: true,
+            navText: [
+               bacIcon,
+               forIcon            
+            ],
+            responsive:{
+                0:{
+                    items:2,
+                    margin: 0
+                },
+                700:{
+                    items:3,
+                    margin: 0
+                },
+                1000:{
+                    items:4,
+                    margin: 5
+                }
+            }
+        });
+        const fasIcon = '<button class="right"><i class="fa fa-angle-right"></i></button>';
+        const rewIcon = '<button class="left"><i class="fa fa-angle-left"></i></button>';
+        $(".tfy").owlCarousel({
+            loop: true,
+            nav: true,
+            navText: [
+               rewIcon,
+               fasIcon            
+            ],
+            responsive:{
+                0:{
+                    items:2,
+                    margin: 0
+                },
+                700:{
+                    items:3,
+                    margin: 0
+                },
+                1000:{
+                    items:4,
+                    margin: 5
+                }
+            }
+        });
+        const speedIcon = '<button class="right"><i class="fa fa-angle-right"></i></button>';
+        const slowIcon = '<button class="left"><i class="fa fa-angle-left"></i></button>';
+        $(".tsy").owlCarousel({
+            loop: true,
+            nav: true,
+            navText: [
+               slowIcon,
+               speedIcon            
+            ],
+            responsive:{
+                0:{
+                    items:2,
+                    margin: 0
+                },
+                700:{
+                    items:3,
+                    margin: 0
+                },
+                1000:{
+                    items:4,
+                    margin: 5
+                }
+            }
+        });
+        const yesIcon = '<button class="right"><i class="fa fa-angle-right"></i></button>';
+        const noIcon = '<button class="left"><i class="fa fa-angle-left"></i></button>';
+        $(".sky").owlCarousel({
+            loop: true,
+            nav: true,
+            navText: [
+               noIcon,
+               yesIcon            
+            ],
+            responsive:{
+                0:{
+                    items:2,
+                    margin: 0
+                },
+                700:{
+                    items:3,
+                    margin: 0
+                },
+                1000:{
+                    items:4,
+                    margin: 5
+                }
+            }
+        });
+	</script>
+</body>
+</html>

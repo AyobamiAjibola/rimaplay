@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<!--- Additional CSS Files --->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<!---- Additional JavaScript Files --->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+</head>
+<style type="text/css">
+	body{
+		background: #262729;
+	}
+	.menu_area{
+		padding: 2rem;
+		display: flex;
+		width: 100%;
+	}
+	.logo a{
+		font-size: 25px;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #295fe8;
+	}
+	.menu_area .menu_dots{
+		width: 30px;
+		height: 30px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		display: grid;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		z-index: 11;
+		margin-left: 1200px;
+	}
+	.menu_area .dot{
+		font-size: 25px;
+		color: #a2a2a2;
+	}
+	.cas{
+		display: none;
+	}
+	.modal{
+		z-index: 8;
+		position: fixed;
+		top: 0;
+		left: 1010px;
+		width: 30%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transform: translateX(100%);
+		transition: all 0.8s ease-in;
+	}
+	.modal:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+    	background: #020202;
+    	opacity: 0.4;
+    	z-index: -1;
+	}
+	.modal ul {
+		list-style: none;
+		display: block;
+	}
+	.modal li{ 
+		margin: 1rem 0;
+	}
+	.modal a{
+		font-size: 30px;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.modal a:hover{
+		text-decoration: underline;
+		text-underline-position: under;
+		text-decoration-color: #4f51b8;
+	}
+	/**Classes for JavaScript**/
+	.modal.open{
+		transform: translateX(0);
+	}
+	.menu_dots.open .op{
+		display: none;
+	}
+	.menu_dots.open .cas{
+		transform: rotate(90deg);
+		display: block;
+		color: #fff;
+	}
+	.menu_dots.open .dot:nth-child(even){
+		background: transparent;
+	}
+	/**Profile**/
+	.eit{
+		text-transform: uppercase;
+		font-size: 30px;
+		color: #cccccc;
+	}
+	.eit_i{
+		background: #f0f0f0;
+		border-radius:50%;
+		width: 40px;
+		height: 40px;
+		align-items: center;
+		position: relative;
+		left: 120px;
+		top: 44px;
+	}
+	.eit_i i{
+		font-size: 18px;
+		position: relative;
+		top: 3px;
+		padding: 10px; 
+		color: #000;
+	}
+	.eit_im{
+		background: #3f3d3e;
+		align-content: center;
+		border-radius: 50%;
+		width: 160px;
+		height: 160px;
+	}
+	.eit_im img{
+		position: relative;
+		top: 20px;
+		left: 0px;
+		padding: 20px;
+		border-radius: 50%;
+	}
+	.sgin_r{
+		margin-left: 50px;
+		display: flex;
+		align-items: center;
+	}
+	.sgin_r label{
+		cursor: pointer;
+		display: flex;
+		color: #b9bac5; 
+		font-size: 18px;
+	}
+	.sgin_r input[type="checkbox"]{
+		cursor: pointer;
+		opacity: 0;
+		position: absolute;
+	}
+	.sgin_r label::before {
+		content: '';
+		width: 1.5em;
+		height: 1.5em;
+		border: .05em solid #26499b;
+		border-radius: .15em;
+		margin-right: .5em;
+	}
+	.sgin_r label:hover::before,
+	.sgin_r input[type="checkbox"]:hover + label::before{
+		background: #1b3376;
+	}
+	.sgin_r input[type="checkbox"]:checked + label::before{
+		content: '\002714';
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+	.checked{
+		position: relative;
+		display: block;
+		width: 80px;
+		height: 30px;
+		border-radius: 50px;
+		background: #26499b;
+		outline: none;
+		transition: .5s ease;
+		margin-left: 50px;
+		margin-top: 30px;
+	}
+	input[type="checkbox"].toggle{
+		-webkit-appearance: none;
+		display: none;
+	}
+	.checked:before{
+		position: absolute;
+		content: "";
+		left: 0;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		transition: .5s ease;
+		z-index: 9;
+		background: #cccccc;
+	}
+	input[type="checkbox"].toggle:checked ~ .checked:before{
+		left: 52px;
+	}
+	.checked{
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+	}
+	.checked .fa{
+		position: relative;
+		font-size: 20px;
+		padding: 7px;
+		color: #8a94b6;
+	}
+	.eit_p p{
+		position: relative;
+		right: 50px;
+		top: 30px;
+		font-size: 20px;
+		text-transform: capitalize;
+		color: #b3b4b5;
+	}
+	.box{
+		background: radial-gradient(circle,#1a264c,#1a264c,#26272c,#26272c);
+		width: 350px;
+		height: 350px;
+		border-radius: 50%;
+		padding-top: 40px;
+		padding-left: 40px;
+	}
+	.box p{
+		text-transform: capitalize;
+		font-size: 35px;
+	}
+	.butn{
+		color: #fffffd;
+		background-color: #284895;
+		text-transform: capitalize;
+		padding: 5px 40px;
+		outline: none;
+		border: none;
+	}
+	.nn{
+		background: transparent;
+		border: 2px solid #284895;
+	}
+	.ol h3{
+		font-size: 30px;
+		text-transform: capitalize;
+		color: #f0f0f0;
+	}
+	.xz{
+		float: right;
+		font-size: 20px;
+		text-transform: capitalize;
+		margin-top: 40px;
+		color: #2859d7;
+	}
+	.glow{
+		background: #273d71;
+		padding: 5px;
+		border-radius: 40px;
+		box-shadow: 0px 0px 50px #273d71,
+		0px 0px 50px #273d71;
+		width: 200px;
+		text-align: center;
+	}
+	.glow:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 4;
+		z-index: -1;
+	}
+	.glow_p{
+		color: #cccccc;
+		font-size: 20px;
+	}
+	@media(max-width: 800px){	
+	.modal{
+		z-index: 8;
+		position: fixed;
+		top: 0;
+		left: 180px;
+		width: 55%;
+		transform: translateX(100%);
+	}
+	.menu_area .menu_dots{
+		margin-left: 250px;
+	}
+	.butn{
+		padding: 0px 30px;
+	}
+	.eit{
+		font-size: 20px;
+	}
+	.eit_i{
+		width: 30px;
+		height: 30px;
+	}
+	.eit_i i{
+		padding: 5px;
+	}
+	.eit_im{
+		width: 140px;
+		height: 140px;
+	}
+	.sgin_r label{
+		font-size: 16px;
+	}
+	.sgin_r{
+		margin-left: 30px;
+	}
+	.checked{
+		margin-left: 30px;
+	}
+	.eit_p p{
+		position: relative;
+		right: 60px;
+		font-size: 18px;
+	}
+	.box p{
+		font-size: 20px;
+	}
+	.eit-ii{
+		display: none;
+	}
+	.ol h3{
+		font-size: 20px;
+	}
+	.xz{
+		margin-top: 50px;
+	}
+	.glow{
+		padding: 0px;
+	}
+	.glow_p{
+		font-size: 12px;
+	}
+	}
+</style>
+<body>
+	<section>
+		<!--==Navigation==-->
+		<nav>
+			<div class="menu_area">
+				<div class="logo">
+					<a href="index.html">skyline</a>
+				</div>
+				<div class="menu_dots">
+					<div class="dot">
+						<i class="fa fa-ellipsis-v op"></i>
+						<i class="fa fa-times cas"></i>
+					</div>
+				</div>
+			</div>
+			<div class="modal">
+				<ul>
+					<li><a href="index.html">home</a></li>
+					<li><a href="">movies</a></li>
+					<li><a href="">tvshows</a></li>
+					<li><a href="">new</a></li>
+					<li><a href="">ireport</a></li>
+					<li><a href="">my list</a></li>
+					<li><a href="">setting</a></li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+	<section style="margin-top: 20px; padding: 30px 0px;">
+		<div class="container">
+			<div>
+				<h2 class="eit">edit profile</h2>
+			</div>
+			<hr>
+			<div>
+				<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<div>
+							<a href="">
+								<div class="eit_i">
+									<i class="fa fa-pencil"></i>
+								</div>
+								<div class="eit_im">
+									<img src="images/w1.png" class="img-responsive img-fluid">
+								</div>
+							</a>
+						</div>
+						<div class="row" style="margin-top: 40px;">
+							<div class="col-sm-12 col-md-12 col-lg-12 sgin_r">
+								<input type="checkbox" id="cb1" name="">
+								<label for="cb1">Kids</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-md-12 col-lg-12">
+								<div class="row">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+										<div>
+											<label>
+												<input type="checkbox" class="toggle" name="">
+												<span class="checked">
+													<i class="fa fa-lock"></i>
+													<i class="fa fa-unlock-alt"></i>
+												</span>
+											</label>
+										</div>
+									</div>
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 eit_p">
+										<p>public</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4 col-lg-4 box" style="color: #cccccc;">
+						<div>
+							<p>John_Doe</p>
+						</div>
+						<div>
+							<p>john m doe</p>
+						</div>
+						<div>
+							<p>abuja, nigeria</p>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<div class="eit-ii" style="background: #f0f0f0; border-radius:50%; width: 40px; height: 40px; align-items: center; float: right;">
+							<i class="fa fa-pencil" style=" font-size: 18px; position: relative; top: 3px; padding: 10px; color: #000;"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div class="ol">
+						<h3>language</h3>
+					</div>
+					<div>
+						<p style="font-size: 20px; text-transform: capitalize; color: #756e6e;">english</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<a href="" class="xz">change</a>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div class="ol">
+						<h3>maturity settings</h3>
+					</div>
+					<div class="glow">
+						<p style="text-transform: capitalize; color: #c2c3c7;">all maturity setting</p>
+					</div>
+					<div>
+						<p class="glow_p">Show titles to all maturity rating</p>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<a href="" class="xz">change</a>
+				</div>
+			</div>
+			<div>
+				<div class="row" style="margin-top: 30px;">
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center" style="margin-top: 10px;">
+						<input type="submit" name="" value="send" class="btn butn">
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center" style="margin-top: 10px;">
+						<input type="submit" name="" value="cancel" class="btn butn nn">
+					</div>
+					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center" style="margin-top: 10px;">
+						<input type="submit" name="" value="delete profile" class="btn butn nn">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		const menu = document.querySelector('.menu_dots');
+		const modal = document.querySelector('.modal');
+		const logo = document.querySelector('.logo');
+
+		menu.addEventListener('click', openModal);
+
+		function openModal(){
+			menu.classList.toggle('open')
+			modal.classList.toggle('open')
+			logo.classList.toggle('open')
+		}
+	</script>
+</body>
+</html>

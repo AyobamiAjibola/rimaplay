@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<!--- Additional CSS Files --->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<!---- Additional JavaScript Files --->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+</head>
+<style type="text/css">
+	nav{
+		padding: 20px 15px;
+		z-index: 99;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 70px;
+	}
+    nav.sticky{
+    	background-color: transparent;
+    }
+	.logo a{
+		text-decoration: none;
+		font-size: 25px;
+		text-transform: uppercase;
+		color: #cbcbcb;
+	}
+	.butt{
+		float: right;
+		outline: none;
+		padding: 5px 15px;
+		background: #1e3369;
+	}
+	.butt a{
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+		text-decoration: none;
+		color: #fff;
+	}
+	.step{
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.step_plan{
+		font-size: 30px;
+		text-transform: capitalize;
+		color: #274eb4;
+	}
+	.step_pp{
+		font-size: 16px;
+		color: #fff;
+	}
+	.plan{
+		margin-top: 30px;
+		padding: 40px;
+	}
+	.step_link{
+		background: transparent;
+		padding: 7px 25px;
+		outline: none;
+		border: 1px solid #284388;
+	}
+	.colo{
+		color: #fff;
+	}
+	.plan_btn{
+		outline: none;
+		padding: 5px 40px;
+		font-size: 20px;
+		background:  #284388;
+		color: #fff;
+	}
+	.hr_line{
+		width: 200px;
+		height: 4px;
+		background: #295fe8;
+		border: none;
+	}
+	@media(max-width: 800px){
+	.logo a{
+		text-decoration: none;
+		font-size: 20px;
+	}
+	.butt{
+		padding: 0px 10px;
+	}
+	.step{
+		font-size: 14px;
+	}
+	.step_plan{
+		font-size: 20px;
+	}
+	.step_pp{
+		font-size: 13px;
+	}
+
+	.plan{
+		padding: 10px;
+	}
+	.step_link{
+		padding: 0px 3px;
+		position: relative;
+		right: 23px;
+	}
+	.mt{
+		position: relative;
+		left: 12px;
+	}
+	.plan_btn{
+		padding: 0px 20px;
+		font-size: 18px;
+		margin-bottom: 30px;
+	}
+	.hr_line{
+		width: 70px;
+	}
+	}
+</style>
+<body style="background: #272727;">
+	<section>
+		<nav>
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div class="logo">
+						<a href="index.html">
+							skyline
+						</a>
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<button class="btn butt">
+						<a href="index.html">
+							sign out
+						</a>
+					</button>
+				</div>
+			</div>
+		</nav>
+	</section>
+	<section style="margin-top: 100px;">
+		<div class="container">
+			<p class="step">step 2 of 3</p>
+			<p class="step_plan">Select your plan</p>
+			<p class="step_pp">no hidden fees, equipment rentals, or installation appointments</p>
+			<p class="step_pp">switch plan or cancel anytime</p>
+		</div>
+	</section>
+	<section style="plan">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 m">
+					<button style="" class="btn step_link">
+						<a href="" style="text-transform: capitalize; font-weight: bold; text-align: center; text-decoration: none; color: #fff;">starter</a>
+					</button>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<button class="btn step_link">
+						<a href="" style="text-transform: capitalize; font-weight: bold; text-align: center; text-decoration: none; color: #fff;">fun pack</a>
+					</button>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 mt">
+					<button class="btn step_link">
+						<a href="" style="text-transform: capitalize; font-weight: bold; text-align: center; text-decoration: none; color: #fff;">giddy</a>
+					</button>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<button class="btn step_link" style="background: #284388;">
+						<a href="" style="text-transform: capitalize; font-weight: bold; text-align: center; text-decoration: none; color: #fff;">premium</a>
+					</button>
+				</div>
+			</div>
+			<div class="row colo" style="margin-top: 50px;">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<p>Number of scenes you can</p>
+					<p>watch on at the same time</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>1</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>1</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>2</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>4</p>
+				</div>
+			</div>
+			<hr>
+			<div class="row colo">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<p>Number of phone or tablet</p>
+					<p>you can have download on</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>1</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>1</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>2</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p>4</p>
+				</div>
+			</div>
+			<hr>
+			<div class="row colo">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<p>Unlimited movies, Tv show</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<hr>
+			<div class="row colo">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<p>Watch on your mobile phone</p>
+					<p>and tablet</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<hr>
+			<div class="row colo">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<p>Watch on your laptop and TV</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p></p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<hr>
+			<div class="row colo">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<p>HD available</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p></p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p></p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<hr>
+			<div class="row colo">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<p>Ultra HD available</p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p></p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p></p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<p></p>
+				</div>
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 text-center">
+					<i class="fa fa-check"></i>
+				</div>
+			</div>
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				</div>
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<hr class="hr_line">
+				</div>
+			</div>
+			<div style="margin: 30px 0px;" class="row text-center">
+				<div class="col-sm-12 col-md-12 col-lg-12">
+					<input type="submit" class="btn plan_btn" value="Next" >
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php 
+	include('includes/footer.php');
+	?>
+	<script type="text/javascript">
+		// search-box open close js code
+		let navbar = document.querySelector(".navbar");
+        let body = document.querySelector("body");
+        let nav = document.querySelector("nav");
+
+        window.onscroll = ()=>{
+            this.scrollY > 20 ? nav.classList.add("sticky") : nav.classList.remove("sticky");
+        }
+	</script>
+</body>
+</html>
