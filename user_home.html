@@ -32,136 +32,97 @@
     nav.sticky{
     	background-color: transparent;
     }
-    /**HEADER**/
-    .left_area{
-        display: flex;
-        padding: 20px;
+	.menu_area{
+		padding: 2rem;
+		display: flex;
+		width: 100%;
+	}
+    .menu_text i{
+        margin-left: 1050px;
+        color: #fefefe;
     }
-    .left_area .logo a{
-        font-size: 20px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #fff;
-    }
-    .right_area{
-        float: right;
-    }
-    .menu_area{
-        display: flex;
-        margin-right: 150px;
-        position: relative;
-        bottom: 50px;
-    }
-    .menu_text ul{
-        list-style: none;
-    }
-    .cand{
-        margin-right: 20px;
-        font-size: 25px;
-        color: #fff;
-    }
-    .and_o{
-        font-size: 25px;
-        color: #fff;
-    }
-    .and_o p{
-        background: #2445e4;
-        color: #000;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        text-align: center;
-        position: relative;
-        left: 10px;
-        bottom: 15px;
-        font-size: 16px;
-    }
-    .navbar{
-        width: 300px;
-        height: 100%;
-        background: #262626;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: right .8s cubic-bezier(1, 0, 0, 1);
-    }
-    .change{
-        right: 0;
-    }
-    .hamburger-menu{
-        width: 35px;
-        height: 30px;
-        background: transparent;
-        position: fixed;
-        top: 20px;
-        right: 70px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .line{
-        width: 100%;
-        height: 3px;
-        background: #fff;
-        transition: all 0.8s;
-    }
-    .change .line-1{
-        transform: rotateZ(-45deg) translate(-8px, 6px);
-    }
-    .change .line-2{
-        opacity: 0;
-    }
-    .change .line-3{
-        transform: rotateZ(45deg) translate(-8px, -6px);
-    }
-    .nav-list{
-        text-align: right;
-    }
-    .nav-item{
-        list-style: none;
-        margin: 25px;
-    }
-    .nav-link{
-        text-decoration: none;
-        font-size: 22px;
-        color: #eee;
-        font-weight: 300;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        position: relative;
-        padding: 3px 0;
-    }
-    .nav-link::before,
-    .nav-link::after{
-        content: "";
-        width: 100%;
-        height: 2px;
-        background: chocolate;
-        position: absolute;
-        left: 0;
-        transform: scaleX(0);
-        transition: transform 0.5s;
-    }
-    .nav-link::after{
-        bottom: 0;
-        transform-origin: right;
-    }
-    .nav-link::before{
-        top: 0;
-        transform-origin: left;
-    }
-    .nav-link:hover{
-        text-decoration: none;
-        color: #fff;
-    }
-    .nav-link:hover::before,
-    .nav-link:hover::after{
-        transform: scaleX(1);
-    }
+	.logo a{
+		font-size: 25px;
+		text-transform: uppercase;
+		text-decoration: none;
+		margin-left: 20px;
+		color: #fefefe;
+	}
+	.menu_area .menu_dots{
+		width: 30px;
+		height: 30px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		display: grid;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		z-index: 11;
+	}
+	.menu_area .dot{
+		font-size: 20px;
+		 margin-left: 20px;
+	}
+	.cas{
+		display: none;
+	}
+	.modal{
+		z-index: 8;
+		position: fixed;
+		top: 0;
+		left: 1010px;
+		width: 30%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		transform: translateX(100%);
+		transition: all 0.8s ease-in;
+	}
+	.modal:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+    	background: #020202;
+    	opacity: 0.4;
+    	z-index: -1;
+	}
+	.modal ul {
+		list-style: none;
+		display: block;
+	}
+	.modal li{ 
+		margin: 1rem 0;
+	}
+	.modal a{
+		font-size: 25px;
+		text-transform: uppercase;
+		color: #fff;
+	}
+	.modal a:hover{
+		text-decoration: underline;
+		text-underline-position: under;
+		text-decoration-color: #4f51b8;
+	}
+	/**Classes for JavaScript**/
+	.modal.open{
+		transform: translateX(0);
+	}
+	.menu_dots.open .op{
+		display: none;
+	}
+	.menu_dots.open .cas{
+		transform: rotate(90deg);
+		display: block;
+		color: #fff;
+	}
+	.menu_dots.open .dot:nth-child(even){
+		background: transparent;
+	}
 	/**HOME**/
 	.home{
 		background: url('images/13.jpg');
@@ -202,7 +163,8 @@
 	.btn_cul{
 		outline: none;
 		padding: 10px 40px;
-        background: rgb(32 73 177 / 70%);
+		background: #2049b1;
+		opacity: .7;
 	}
 	.btn_cul a{
 		font-size: 20px;
@@ -256,16 +218,17 @@
     	color: #5c5451;
     }
     .homz button.left{
-    	position: absolute;
-        right: 0px;
+    	position: relative;
+    	right: 70px;
     }
     .homz button.right{
-    	position: absolute;
-    	left: 1165px;
+    	position: relative;
+    	left: 1170px;
     }
     .homz .owl-nav{
         position: absolute;
-        top: 100px;
+        bottom: 10px;
+
     }
     .bak_d:before{
     	content: "";
@@ -285,9 +248,6 @@
     .ry{
     	flex: 1;
         margin: 0 5px;
-    }
-    .rfy img{
-        box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%);
     }
     .rfy .owl-nav{
         position: absolute;
@@ -316,10 +276,6 @@
         flex: 1;
         margin: 0 5px;
     }
-    .pmy img{
-
-        box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%);
-    }
     .pmy .owl-nav{
         position: absolute;
         top: -60px;
@@ -346,10 +302,6 @@
     .ty{
         flex: 1;
         margin: 0 5px;
-    }
-    .tfy img{
-
-        box-shadow: 0 5px 20px 0 rgb(0 0 0 / 20%);
     }
     .tfy .owl-nav{
         position: absolute;
@@ -378,10 +330,6 @@
         flex: 1;
         margin: 0 5px;
     }
-    .tsy img{
-
-        box-shadow: 0 5px 20px 0 rgb(0 0 0 / 30%);
-    }
     .tsy .owl-nav{
         position: absolute;
         top: -60px;
@@ -408,10 +356,6 @@
     .sk{
         flex: 1;
         margin: 0 5px;
-    }
-    .sky img{
-
-        box-shadow: 0 5px 20px 0 rgb(0 0 0 / 30%);
     }
     .sky .owl-nav{
         position: absolute;
@@ -470,7 +414,7 @@
         transition: 0.5s ease-out;
         border-radius: 5px;
         object-fit: cover;
-        height: 80vh;
+        box-shadow: 0 0 2px 1px rgb(0 0 0 / 20%);
     }
     .single-team:hover img{
         transform: scale(1.2);
@@ -532,32 +476,21 @@
     	background: transparent!important;
     	border: 2px solid #2049ad!important;
     }
-    .bold_text{
-        text-transform: capitalize;
-        font-weight: bold;
-        margin-left: 50px;
-        color: #fff;
-    }
     @media (max-width: 800px){
-        /**NAVBAR**/
-        .menu_area{
-            margin-right: 80px;
-            position: relative;
-            bottom: 50px;
-        }
-        .menu_text ul{
-            list-style: none;
-        }
-        .cand{
-            font-size: 20px;
-        }
-        .and_o{
-            font-size: 20px;
-        }
-        .and_o p{
-            color: #000;
-            font-size: 15px;
-        }
+    	.menu_text{
+    		margin-left: 130px;
+    	}  
+    	.modal{
+    		z-index: 8;
+    		position: fixed;
+    		top: 0;
+	        left: 180px;
+	        width: 55%;
+	        transform: translateX(100%);
+	    }
+	    .menu_area .menu_dots{
+	    	margin-left: 0px;
+	    }
 	    /**HOME**/
 	    .home{
 	    	height: 140vh;
@@ -569,7 +502,7 @@
 	    	font-size: 18px;
 	    }
 	    .hom_li{
-	    	margin-left: 35px;
+	    	margin-left: 105px;
 	    	height: 35px;
 	    	width: 35px;
 	    }
@@ -582,11 +515,11 @@
 	    	margin-left: 10px;
 	    }
 	    .hom_ps{
-	    	font-size: 18px;
+	    	font-size: 20px;
 	    }
 	    .btn_cul{
 	    	outline: none;
-	    	padding: 0px 10px;
+	    	padding: 5px 20px;
 	    }
 	    .btn_cul a{
 	    	font-size: 18px;
@@ -595,30 +528,19 @@
 	    	position: relative;
 	    	right: 0px;
 	    	outline: none;
-	    	padding: 0px 10px;
+	    	padding: 5px 20px;
 	    }
 	    .btn_off a{
 			font-size: 18px;
 		}
 		.homz{
-			padding: 0px 20px;
+			padding: 0px 70px;
 		}
-        .bak_d:before{
-            height: 80%;
-        }
 		/**Overlay**/
 		.overlay-text{
 			display: none;
 		}
-        .bold_text{
-            text-transform: capitalize;
-            font-weight: bold;
-            margin-left: 0px;
-            color: #fff;
-        }
-        .dis{
-            font-size: 18px;
-        }
+
 	}
 	/**For Owl-Carousel Only**/
     @media (max-width: 1199px){
@@ -646,74 +568,45 @@
 	        margin: 0 10px;
 	    }
 	}
-    @media(max-width: 768px){
-        .hamburger-menu{
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        }
-    }
 </style>
 <body>
 	<section>
 		<!--==Navigation==-->
-            <header>
-                <nav>
-                    <div class="left_area">
-                        <div class="logo">
-                            <a href="">skyline</a>
-                        </div>  
-                    </div>
-                    <div class="right_area">
-                        <div class="menu_area">
-                            <div class="menu_text">
-                                <ul style="display: flex;">
-                                    <li>
-                                        <a href="" class="cand">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="and_o">
-                                            <i class="fa fa-bullhorn"></i>
-                                            <p>2</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="navbar">
-                                <div class="hamburger-menu">
-                                    <div class="line line-1"></div>
-                                    <div class="line line-2"></div>
-                                    <div class="line line-3"></div>
-                                </div>
-                                <ul class="nav-list">
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link">home</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+		<nav>
+			<div class="menu_area">
+				<div class="logo">
+					<a href="index.html">skyline</a>
+				</div>
+				<div class="menu_text">
+					<a href="">
+						<i class="fa fa-search" style="font-size: 20px; margin-top: 5px;"></i>
+					</a>
+				</div>
+				<div style="margin-left: 20px;">
+					<a href="">
+						<i class="fa fa-bullhorn" style="font-size: 25px; color: #fefefe;"></i>
+						<p style="background: #2445e4; color: #000; width: 20px; height: 20px; border-radius: 50%; text-align: center; position: relative; left: 10px; bottom: 15px;">2</p>
+					</a>
+				</div>
+				<div class="menu_dots" style="color: #fff;">
+					<div class="dot">
+						<i class="fa fa-bars op"></i>
+						<i class="fa fa-times cas"></i>
+					</div>
+				</div>
+			</div>
+			<div class="modal">
+				<ul>
+					<li><a href="index.html">home</a></li>
+					<li><a href="">movies</a></li>
+					<li><a href="">tvshows</a></li>
+					<li><a href="">new</a></li>
+					<li><a href="">ireport</a></li>
+					<li><a href="">my list</a></li>
+					<li><a href="">setting</a></li>
+				</ul>
+			</div>
+		</nav>
 	</section>
 	<section class="home">
 		<div class="container" style="color: #fff;">
@@ -753,61 +646,61 @@
             <div class="homz owl-carousel bak_d">
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">comedy</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">comedy</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">romance</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">romance</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">sci-fi/fantacy</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">sci-fi/fantacy</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">action/thriller</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">action/thriller</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">horror</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">horror</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">comedy</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">comedy</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">romance</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">romance</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">sci-fi/fantacy</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">sci-fi/fantacy</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">action/thriller</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">action/thriller</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
                 <div class="hom">
                     <a href="">
-                    	<h3 class="text-center dis" style="text-transform: uppercase;">horror</h3>
+                    	<h3 class="text-center" style="text-transform: uppercase;">horror</h3>
                         <img src="images/13.jpg" class="img-responsive img-fluid">
                     </a>
                 </div>
@@ -818,7 +711,7 @@
         <div>
             <div class="container-fluid">
                 <div>
-                    <h3 class="bold_text">recommanded for you</h3>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">recommended for you</h3>
                 </div>
                 <div class="rfy owl-carousel" style="margin-top: 30px;">
                     <div class="ry single-team">
@@ -1256,7 +1149,7 @@
         <div>
             <div class="container-fluid">
                 <div>
-                    <h3 class="bold_text">popular movies for you</h3>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">popular movies for you</h3>
                 </div>
                 <div class="pmy owl-carousel" style="margin-top: 30px;">
                     <div class="pm single-team">
@@ -1694,7 +1587,7 @@
         <div>
             <div class="container-fluid">
                 <div>
-                    <h3 class="bold_text">top 10 trending for you</h3>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">top 10 trending for you</h3>
                 </div>
                 <div class="tfy owl-carousel" style="margin-top: 30px;">
                     <div class="ty single-team">
@@ -2132,7 +2025,7 @@
         <div style="color: #000;">
             <div class="container-fluid">
                 <div>
-                    <h3 class="bold_text">popular tv series for you</h3>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">popular tv series for you</h3>
                 </div>
                 <div class="tsy owl-carousel" style="margin-top: 30px;">
                     <div class="ts single-team">
@@ -2570,7 +2463,7 @@
         <div>
             <div class="container-fluid">
                 <div>
-                    <h3 class="bold_text">skyline kiddies for you</h3>
+                    <h3 style="text-transform: capitalize; font-weight: bold; margin-left: 50px; color: #fff;">skyline kiddies for you</h3>
                 </div>
                 <div class="sky owl-carousel" style="margin-top: 30px;">
                     <div class="sk single-team">
@@ -3004,18 +2897,26 @@
             </div>
         </div>            
     </section>
-    <?php 
-    include('includes/footer.php');
-    ?>
+	<?php 
+	include('includes/footer.php');
+	?>
 	<script type="text/javascript">
-        // search-box open close js code
+		// search-box open close js code
+		let navbar = document.querySelector(".navbar");
         let body = document.querySelector("body");
         let nav = document.querySelector("nav");
-        const menuIcon = document.querySelector('.hamburger-menu');
-        const navbar = document.querySelector('.navbar')
-        menuIcon.addEventListener('click', () =>{
-            navbar.classList.toggle("change");
-        })
+		const menu = document.querySelector('.menu_dots');
+		const modal = document.querySelector('.modal');
+		const logo = document.querySelector('.logo');
+
+		menu.addEventListener('click', openModal);
+
+		function openModal(){
+			menu.classList.toggle('open')
+			modal.classList.toggle('open')
+			logo.classList.toggle('open')
+		}
+
         window.onscroll = ()=>{
             this.scrollY > 20 ? nav.classList.add("sticky") : nav.classList.remove("sticky");
         }
@@ -3034,11 +2935,11 @@
                     margin: 0
                 },
                 700:{
-                    items:1,
+                    items:3,
                     margin: 0
                 },
                 1000:{
-                    items: 5,
+                    items:5,
                     margin: 2
                 }
             }
@@ -3054,16 +2955,16 @@
             ],
             responsive:{
                 0:{
-                    items: 1,
+                    items:2,
                     margin: 0
                 },
                 700:{
-                    items: 2,
+                    items:3,
                     margin: 0
                 },
                 1000:{
                     items:4,
-                    margin: 2
+                    margin: 5
                 }
             }
         });
@@ -3078,11 +2979,11 @@
             ],
             responsive:{
                 0:{
-                    items:1,
+                    items:2,
                     margin: 0
                 },
                 700:{
-                    items:2,
+                    items:3,
                     margin: 0
                 },
                 1000:{
@@ -3102,11 +3003,11 @@
             ],
             responsive:{
                 0:{
-                    items:1,
+                    items:2,
                     margin: 0
                 },
                 700:{
-                    items:2,
+                    items:3,
                     margin: 0
                 },
                 1000:{
@@ -3126,11 +3027,11 @@
             ],
             responsive:{
                 0:{
-                    items:1,
+                    items:2,
                     margin: 0
                 },
                 700:{
-                    items:2,
+                    items:3,
                     margin: 0
                 },
                 1000:{
@@ -3150,11 +3051,11 @@
             ],
             responsive:{
                 0:{
-                    items:1,
+                    items:2,
                     margin: 0
                 },
                 700:{
-                    items:2,
+                    items:3,
                     margin: 0
                 },
                 1000:{
