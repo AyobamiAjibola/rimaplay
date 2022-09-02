@@ -37,6 +37,7 @@
 		background: #272727;
 		position: static;
         box-shadow: 0 5px 20px 0 rgb(0 0 0 / 30%);
+		z-index: 5;
 	}
 	.side_menu h3{
 		color: #d1d1d1;
@@ -163,7 +164,7 @@
     }
     .menu_area{
     	display: flex;
-    	margin-right: 150px;
+    	margin-right: 120px;
     }
     .menu_text ul{
     	list-style: none;
@@ -175,23 +176,84 @@
     	color: #dfdfdf;
     }
     .menu_area li{
-    	margin-left: 30px;
+    	margin-left: 20px;
     }
     .con_a{
-    	font-size: 25px;
+    	font-size: 20px;
+    	margin-top: 10px;
     }
     .ican{
     	border: 2px solid #dfdfdf;
-    	padding: 10px 20px;
+    	padding: 5px 20px;
     	border-radius: 20px;
+    	background-color: transparent;
+    	outline: none;
     }
     .ican i{
-    	font-size: 20px;
+    	font-size: 18px;
     }
     .ican span{
-    	font-size: 20px;
+    	font-size: 16px;
     	text-transform: capitalize;
     }
+    /**Modal**/
+	.modal{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		display: grid;
+		place-items: center;
+		background-color: rgba(0, 0,0, 0.3);
+		display: none;
+	}
+	.modal .card{
+		background-color: #1f1f1f;
+		width: 50rem;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		padding: 2rem;
+		position: relative;
+		opacity: 5;
+	}
+	.card h3{
+		position: absolute;
+		top: 0rem;
+		left: 2rem;
+		font-size: 20px;
+		text-transform: capitalize;
+	}
+	#close{
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+		font-size: 18px;
+	}
+	.info{
+		margin-top: 30px;
+		padding: 20px;
+	}
+	.form_input{
+		display: flex;
+	}
+	.form_input label{
+		text-transform: capitalize;
+	}
+	.form_input input{
+		margin-left: 30px;
+		padding: 0px 30px;
+		border: none;
+		outline: none;
+		background-color: transparent;
+	}
+	.card .form_input input[type="text"]::placeholder,
+	.card .form_input input[type="text"]{
+		text-align: center;
+	}
+	.active:hover{
+		border-top: 1px solid #2956cd;
+		cursor: pointer;
+	}
     .navbar{
 	    width: 300px;
 	    height: 100%;
@@ -204,6 +266,7 @@
 	    align-items: center;
 	    border-radius: 20% 0 0 60%;
 	    transition: right .8s cubic-bezier(1, 0, 0, 1);
+	    z-index: 5;
 	}
 	.change{
 		right: 0;
@@ -346,7 +409,7 @@
 	@media(max-width: 768px){
 		.menu_toggle{
 			display: block;
-			z-index: 3;
+			z-index: 10;
 		}
 		.sidebar{
 			position: fixed;
@@ -384,24 +447,14 @@
 		.menu_area{
 			margin-right: 50px;
 			position: relative;
-			bottom: 45px;
+			bottom: 55px;
 			z-index: -3;
 		}
 		.menu_area li{
 			margin-left: 10px;
 		}
-		.con_a{
-			font-size: 20px;
-		}
 		.ican{
-			padding: 5px 10px;
-		}
-		.ican i{
-			font-size: 20px;
-		}
-		.ican span{
-			font-size: 18px;
-			text-transform: capitalize;
+			padding: 0px 10px;
 		}
 		.hamburger-menu{
 		    position: fixed;
@@ -410,10 +463,24 @@
 		}
 	}
 	@media(max-width: 800px){
-    .boX{
-    	padding: 20px;
-    	border-radius: 20px;
-    }
+		/**Modal**/
+		.modal .card{
+			flex-direction: column;
+			width: 93vw;
+			text-align: center;
+		}
+		.form_input input{
+			margin-left: 5px;
+			padding: 0px 0px;
+		}
+		.card .form_input input[type="text"]::placeholder,
+		.card .form_input input[type="text"]{
+			text-align: center;
+		}
+		.boX{
+			padding: 20px;
+			border-radius: 20px;
+		}
 		.fA{
 			font-size: 90px;
 		}
@@ -593,10 +660,30 @@
 									</a>
 								</li>
 								<li>
-									<a href="" class="ican" style="text-decoration: none;">
+									<button class="ican btn">
 										<i class="fa fa-cloud-upload"></i>
-										<span  data-toggle="modal" data-target="#myModal">upload</span>
-									</a>
+										<span>upload</span>
+									</button>
+									<div class="modal">
+										<div class="card">
+											<i class="fa fa-times" id="close"></i>
+											<h3>add channel</h3>
+											<div class="info">
+												<form>
+													<div class="form_input">
+														<label>channel name</label>
+														<input type="text" name="" placeholder="Africa Culture Mix">
+													</div>
+													<hr class="active">
+													<div class="form_input">
+														<label>channel description</label>
+														<input type="text" name="">
+													</div>
+													<hr class="active">
+													</form>
+											</div>
+										</div>
+									</div>
 								</li>
 								<li>
 									<a href="">
@@ -714,6 +801,9 @@
 		const navbar = document.querySelector('.navbar');
 		const menu_toggle = document.querySelector('.menu_toggle');
 		const sidebar = document.querySelector('.sidebar');
+		const openBtn = document.querySelector('.ican');
+		const closeBtn = document.querySelector('#close');
+		const modal = document.querySelector('.modal');
 
 		menu_toggle.addEventListener('click', () => {
 			menu_toggle.classList.toggle('active');
@@ -722,6 +812,23 @@
 
 		menuIcon.addEventListener('click', () =>{
 			navbar.classList.toggle("change");
+		})
+
+
+		openBtn.addEventListener('click', openModal);
+
+		function openModal(){
+			modal.style.display = 'grid';
+		}
+		closeBtn.addEventListener('click', closeModal);
+
+		function closeModal(){
+			modal.style.display = 'none';
+		}
+		modal.addEventListener('click', function(e){
+			if (e.target.classList.contains('modal')) {
+				closeModal();
+			}
 		})
 	</script>
 </body>
