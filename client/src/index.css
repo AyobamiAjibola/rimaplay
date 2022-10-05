@@ -34,11 +34,9 @@ code {
 }
 
 .logB:hover{
-  
   background-color: #2a5fe9;
   outline: none;
   color: #fff;
- 
 }
 .skyL{
   color: #fff;
@@ -51,7 +49,6 @@ code {
   height: 100vh;
   background-repeat:no-repeat;
   background-position: center;
-  
   background-blend-mode: overlay;
 }
 
