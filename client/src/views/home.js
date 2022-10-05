@@ -1,3 +1,4 @@
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav, Container, Col, Form, Row, Button, Accordion} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';

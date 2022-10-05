@@ -1,3 +1,4 @@
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav, Container, Col, Form, Row, Button, InputGroup} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
@@ -5,11 +6,8 @@ import w1s from '../img/w1s.png';
 
 const Plan = () => {
 
-   
     return (
-        
         <>
-
         <section className="profSec">
             <Container className='whit'>
                 <p className="stepStart">step 2 of 3</p>
