@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from 'react';
 import {Navbar, Nav, Container, Col, Form, Row, Button, InputGroup} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import Carousel from 'react-bootstrap/Carousel';
