@@ -12,7 +12,7 @@ app.use(cors());
 //     res.status(200).send({ data: "Welcome Skyline"});
 //   });
 
-const port = 8080;
+const port = 8000;
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
